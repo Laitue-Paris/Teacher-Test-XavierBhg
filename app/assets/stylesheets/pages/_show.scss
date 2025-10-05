@@ -1,9 +1,39 @@
-.emoji{
-  position: relative;
+.emoji-button{
+  cursor: pointer;
+}
+
+.emoji-container{
+  min-width: 70px;
 }
 .button{
   position: absolute;
   z-index: 1000;
   bottom: 0px;
   left: 50px;
+}
+
+.submit-button{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 10pt;
+    color: #828282;
+}
+
+.form-content{
+  height: 150px;
+}
+
+.comment-content {
+  color: black;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 9pt;
+  margin-bottom: 10px;
+}
+
+.reaction-count {
+  position: absolute;
+  color: black;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 9pt;
+  bottom: -8px;
+  right: -4px;
 }

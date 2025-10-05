@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration[7.1]
       t.string :title
       t.string :post_type
       t.string :url
-      t.integer :score
+      t.integer :vote_count, default: 0
       t.string :author
 
       t.timestamps

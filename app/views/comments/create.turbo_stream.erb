@@ -1,0 +1,21 @@
+<%= turbo_stream.replace "comments_#{@post.id}" do %>
+  <%= turbo_frame_tag "comments_#{@post.id}" do %>
+    <div class="px-4 mt-3 mb-3">
+      <%= render 'posts/form_comment', post: @post, comment: Comment.new %>
+    </div>
+    <div>
+      <% @post.comments.each do |comment| %>
+      <div>
+        <%= render 'posts/comment_display', comment: comment %>
+      </div>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
+
+
+<%= turbo_stream.replace "comments_count_#{@post.id}" do %>
+  <span id="comments_count_<%= @post.id %>">
+    <%= pluralize(@post.comments.count, 'comment') %>
+  </span>
+<% end %>

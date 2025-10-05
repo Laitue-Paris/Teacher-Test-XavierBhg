@@ -1,0 +1,23 @@
+<div data-controller="emoji-picker" data-emoji-picker-comment-id-value=<%= comment.id %>>
+  <div class="home-subtext">
+    <%= comment.user.username %> - <%= comment.time_ago %>
+  </div>
+  <div class="home-subtext text-black">
+    <p class="comment-content"><%= comment.content %></p>
+  </div>
+  <div class="d-flex align-items-center">
+    <div class="home-subtext">
+    <span data-action="click->emoji-picker#fire" data-emoji-picker-target="button" class="emoji-button mt-2">
+      add a reaction |
+    </span>
+    </div>
+    <div id="reactions_<%= comment.id %>">
+      <%= render 'posts/emoji_display', comment: comment %>
+    </div>
+  </div>
+
+  <div data-emoji-picker-target="container" class="relative z-50"></div>
+
+  <%= render 'posts/form_emoji', comment: comment %>
+</div>
+<hr/ class="w-25">

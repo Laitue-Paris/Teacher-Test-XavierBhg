@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :comments, dependent: :destroy
+  has_many :votes, dependent: :destroy
   has_many :reacts, dependent: :destroy
 end

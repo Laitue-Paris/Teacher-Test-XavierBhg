@@ -1,0 +1,6 @@
+<%= form_with url: reacts_path,
+              id: "react_form_#{comment.id}",
+              data: { turbo: true } do |f| %>
+  <%= f.hidden_field :comment_id, value: comment.id %>
+  <%= f.hidden_field :emoji, value: "" %>
+<% end %>

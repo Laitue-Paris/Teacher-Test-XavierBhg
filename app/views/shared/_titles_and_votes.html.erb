@@ -1,0 +1,25 @@
+<div class="d-flex">
+  <div id="number" class="">
+    <%= "#{index + 1}." if defined?(index) %>
+  </div>
+  <div id="vote_button_<%= post.id %>" class="ps-1">
+    <%= render 'shared/link_to_upvote', post: post %>
+  </div>
+  <div class="ps-1">
+    <div class="">
+      <%= link_to post.title, post_path(post), class: "home-post-title" %> <span class="home-post-url">(<%= link_to post.url, post.url, class: "home-post-url" %>)</span>
+    </div>
+    <div class="home-subtext">
+      <%= render 'shared/vote_section', post: post %>
+        points by <%= post.author %>
+        <%= link_to post_path(post), class:"home-subtext " do %>
+          <%= post.time_ago %> |
+        <% end %>
+        <span id="comments_count_<%= post.id %>">
+          <%= link_to post_path(post), class:"home-subtext" do %>
+            <%= pluralize(post.comments.count, 'comment') %>
+          <% end %>
+        </span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<%= turbo_stream.replace "vote_button_#{@post.id}" do %>
+  <div id="vote_button_<%= @post.id %>" class="d-inline">
+    <%= render 'shared/link_to_upvote', post: @post %>
+  </div>
+<% end %>
+
+<%= turbo_stream.replace "vote_section_#{@post.id}" do %>
+  <%= render 'shared/vote_section', post: @post %>
+<% end %>
+

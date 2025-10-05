@@ -1,0 +1,4 @@
+<%= simple_form_for [post, comment], data: { turbo_frame: "comments_#{post.id}" } do |f| %>
+  <%= f.input :content, label: false, input_html: { class: "w-50 bg-white form-content"} %>
+  <%= f.submit "Add a comment", class: "submit-button" %>
+<% end %>

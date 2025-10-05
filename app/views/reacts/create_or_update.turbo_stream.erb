@@ -1,0 +1,5 @@
+<%= turbo_stream.replace "reactions_#{@comment.id}" do %>
+  <div id="reactions_<%= @comment.id %>">
+    <%= render 'posts/emoji_display', comment: @comment %>
+  </div>
+<% end %>

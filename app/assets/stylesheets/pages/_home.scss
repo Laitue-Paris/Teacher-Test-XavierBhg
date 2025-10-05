@@ -3,3 +3,30 @@ a {
   text-decoration: none;
   color: black
 }
+
+.container {
+  width: 1248px;
+}
+
+.home-post-title {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 10pt;
+  color: #000000;
+  // padding-left: 20px !important;
+}
+
+.home-post-title:visited {
+  color: #828282;
+}
+
+.home-post-url {
+  color: #828282;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 8pt;
+}
+
+.home-subtext {
+font-family: Verdana, Geneva, sans-serif;
+  font-size: 7pt;
+  color: #828282;
+}

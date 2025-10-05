@@ -1,10 +1,31 @@
 <div class="container p-0">
-  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon bg-primary">
-    <div class="container justify-content-start align-items-center">
-      <%= link_to "/", class: "navbar-brand" do %>
-        <%= image_tag "logo-test-ta.svg", class:"border border-white" %>
+  <div class="nav-y d-flex align-items-center">
+    <div class="d-flex align-items-center gap-1">
+      <%= link_to root_path, class: "ps-1" do %>
+        <%= image_tag "y18.svg", class:"nav-logo" %>
       <% end %>
-        <h2>Hackernews</h2>
-
+        <b class="nav-title">
+          <%= link_to "Hacker news", root_path, class:"nav-title" %>
+        </b>
+        <a href="/" class="nav-title">new</a>
+        |
+        <a href="/" class="nav-title">past</a>
+        |
+        <a href="/" class="nav-title">comments</a>
+        |
+        <a href="/" class="nav-title">ask</a>
+        |
+        <a href="/" class="nav-title">show</a>
+        |
+        <a href="/" class="nav-title">jobs</a>
+        |
+        <a href="/" class="nav-title">submit</a>
+  </div>
+  <div class="nav-title pe-1">
+    <% if user_signed_in? %>
+      <%= link_to "logout", destroy_user_session_path, data: { turbo_method: :delete }, class:"nav-title" %>
+    <% else %>
+      <%= link_to "login",  new_user_session_path, class:"nav-title" %>
+    <% end %>
   </div>
 </div>

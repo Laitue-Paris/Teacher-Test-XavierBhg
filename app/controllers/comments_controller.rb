@@ -1,13 +1,18 @@
 class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
-    @comment = Comment.new(comment_params)
+    @comment = @post.comments.build(comment_params)
     @comment.user = current_user
-    @comment.post = @post
     if @comment.save
-      redirect_to post_path(@post)
+      respond_to do |format|
+        format.turbo_stream
+        format.html { redirect_to post_path(@post) }
+      end
     else
-      render "posts/show", status: :unprocessable_entity
+      respond_to do |format|
+        format.turbo_stream { render :create, status: :unprocessable_entity }
+        format.html { render "posts/show", status: :unprocessable_entity }
+      end
     end
   end
 

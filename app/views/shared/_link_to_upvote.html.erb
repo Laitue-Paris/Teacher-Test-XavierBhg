@@ -1,0 +1,8 @@
+<div id="vote_button_<%= post.id %>" class="d-inline">
+  <%= link_to (post.user_voted?(current_user) ? '▲' : '△'),
+              post_path(post),
+              method: :patch,
+              data: { turbo_method: :patch },
+              class: "text-decoration-none #{'text-primary' if post.user_voted?(current_user)}" %>
+</div>
+  

@@ -1,24 +1,8 @@
-<div class="container bg-secondary ">
-  <ol class="pt-2">
-  <% @posts.sort_by{|vote| vote.score}.reverse.each do |post| %>
-    <li class="mt-1">
-      <div class="row" data-controller="upvote" data-upvote-score-value="<%= post.score %>">
-        <div class="col-1">
-          <button data-upvote-target="button" data-action="click->upvote#fire">
-            upvote
-          </button>
-        </div>
-        <div class="col-11">
-          <div>
-            <%= link_to post.title, post_path(post) %> <a href="<%= post.url %>">(<%= post.url %>)</a>
-          </div>
-          <div>
-            <%= post.score %> points by <%= post.author %>
-          </div>
-        </div>
-      </div>
-    </li>
-  <% end %>
-  </ol>
+<div class="container bg-secondary d-flex">
+  <div class="pt-2 home-post-title">
+  <% @posts.sort_by_new.each_with_index do |post, index| %>
 
+      <%= render 'shared/titles_and_votes', post: post, index: index %>
+  <% end %>
+  </div>
 </div>

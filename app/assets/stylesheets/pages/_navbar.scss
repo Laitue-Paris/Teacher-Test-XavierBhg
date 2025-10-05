@@ -1,0 +1,22 @@
+.nav-y{
+  height: 25px;
+  margin-top: 10px;
+  background-color: $primary;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  height: 18px;
+  width: 18px;
+  border: 1px white solid;
+  display: block;
+}
+
+.nav-title{
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 10pt;
+  color: #222222;
+  line-height: 12px;
+
+}
