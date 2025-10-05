@@ -37,7 +37,6 @@ export default class extends Controller {
       this.containerTarget.appendChild(this.picker);
     }
 
-    // Toggle visibility
     this.containerTarget.classList.toggle("d-none");
   }
 }
