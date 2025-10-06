@@ -7,7 +7,7 @@
   </div>
   <div class="ps-1">
     <div class="">
-      <%= link_to post.title, post_path(post), class: "home-post-title" %> <span class="home-post-url">(<%= link_to post.url, post.url, class: "home-post-url" %>)</span>
+      <%= link_to post.title, post_path(post), class: "home-post-title" %> <span class="home-post-url">(<%= link_to post.url.truncate(20), post.url, class: "home-post-url" %>)</span>
     </div>
     <div class="home-subtext">
       <%= render 'shared/vote_section', post: post %>

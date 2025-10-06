@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :votes, dependent: :destroy
 
-  scope :sort_by_new, -> { order(vote_count: :desc) }
+  scope :sort_by_top_vote, -> { order(vote_count: :desc) }
 
   def user_voted?(user)
     votes.exists?(user: user)

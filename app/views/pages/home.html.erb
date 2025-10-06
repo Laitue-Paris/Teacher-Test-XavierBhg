@@ -1,6 +1,6 @@
 <div class="container bg-secondary d-flex">
   <div class="pt-2 home-post-title">
-  <% @posts.sort_by_new.each_with_index do |post, index| %>
+  <% @posts.each_with_index do |post, index| %>
 
       <%= render 'shared/titles_and_votes', post: post, index: index %>
   <% end %>
